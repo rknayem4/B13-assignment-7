@@ -6,7 +6,7 @@ import { RiInstagramFill } from "react-icons/ri";
 const Footer = () => {
   return (
     <div className="bg-[#244D3F] w-full py-12 text-white">
-      <div className="container mx-auto">
+      <div className="container mx-auto px-3">
         <div className="text-center space-y-2">
           <h1 className="text-5xl font-bold">KeenKeeper</h1>
           <p className="text-gray-300">
@@ -30,9 +30,9 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center max-md:flex-col space-y-4">
           <p className="text-gray-200">© 2026 KeenKeeper. All rights reserved.</p>
-          <ul className="flex justify-evenly items-center gap-2 text-gray-200">
+          <ul className="flex  justify-evenly items-center gap-4 text-gray-200">
             <li>Privacy</li>
             <li>Terms of Service</li>
             <li>Cookies</li>
