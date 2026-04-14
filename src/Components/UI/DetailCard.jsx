@@ -1,10 +1,43 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FiArchive } from "react-icons/fi";
 import { LuMessageSquareMore, LuVideo } from "react-icons/lu";
 import { RiDeleteBinLine, RiNotificationSnoozeLine } from "react-icons/ri";
 import { TbPhoneCall } from "react-icons/tb";
+import { AppsContext } from "../../Context/AppsContext";
 
 const DetailCard = ({ friendData }) => {
+  const {friend, setFriend} = useContext(AppsContext)
+  console.log(friend)
+  const handleCall = (name)=>{
+    const time = new Date().toLocaleString()
+    const btn = 'Call'
+    const data = {
+      name , 
+      time,
+      btn,
+    }
+    setFriend([...friend, data])
+  }
+  const handleText = (name)=>{
+    const time = new Date().toLocaleString()
+    const btn = 'Text'
+    const data = {
+      name , 
+      time,
+      btn,
+    }
+    setFriend([...friend, data])
+  }
+  const handleVideo = (name)=>{
+    const time = new Date().toLocaleString()
+    const btn = 'Video'
+    const data = {
+      name , 
+      time,
+      btn,
+    }
+    setFriend([...friend, data])
+  }
   const {
     tags,
     picture,
@@ -83,13 +116,13 @@ const DetailCard = ({ friendData }) => {
         <div className="space-y-4 col-span-3  shadow rounded-2xl p-4">
           <h4 className="font-semibold">Quick Check-IN</h4>
           <div className="grid grid-cols-3 gap-3">
-            <button className="btn flex flex-col h-full p-2">
+            <button onClick={()=> handleCall(name)} className="btn flex flex-col h-full p-2">
               <TbPhoneCall className="text-2xl" /> Call{" "}
             </button>
-            <button className="btn flex flex-col h-full p-2">
+            <button onClick={()=> handleText(name)} className="btn flex flex-col h-full p-2">
               <LuMessageSquareMore className="text-2xl" /> Text{" "}
             </button>
-            <button className="btn flex flex-col h-full p-2">
+            <button onClick={()=> handleVideo(name)} className="btn flex flex-col h-full p-2">
               <LuVideo className="text-2xl" /> Video{" "}
             </button>
           </div>
