@@ -2,7 +2,7 @@ import React from "react";
 
 import { IoMdAdd } from "react-icons/io";
 
-const Banner = () => {
+const Banner = ({data}) => {
   return (
     <div>
       <div className="text-center mt-12 py-4 space-y-4">
@@ -21,7 +21,7 @@ const Banner = () => {
       </div>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-5 my-10">
         <div className="text-center space-y-2.5 p-4 shadow rounded">
-          <h3 className="text-2xl font-bold">10</h3>
+          <h3 className="text-2xl font-bold">{data.length}</h3>
           <p className="text-gray-500">Total Friend</p>
         </div>
         <div className="text-center space-y-2.5 p-4 shadow rounded">

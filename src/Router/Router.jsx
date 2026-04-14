@@ -5,6 +5,7 @@ import TimeLine from "../Components/TimeLine/TimeLine";
 import Stats from "../Components/Stats/Stats";
 import Error from "../Components/UI/Error";
 import MainLayout from "../Components/MainLayout";
+import FriendDetails from "../Components/UI/FriendDetails";
 
 export const router = createBrowserRouter([
   {
@@ -14,7 +15,11 @@ export const router = createBrowserRouter([
       {
         index: true,
         Component: Home,
-        loader: ()=> fetch('/data.json')
+      },
+      {
+        path: '/:id',
+        Component: FriendDetails,
+        // loader: () => fetch('/data.json')
       },
       {
         path: '/timeline',
