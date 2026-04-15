@@ -18,7 +18,9 @@ const Stats = () => {
   ];
   return (
     <div className="min-h-screen max-w-250 mx-auto py-20">
-      <h2 className="text-4xl font-bold">Friendship Analytics </h2>
+      <h2 className="text-2xl md:text-4xl md:text-center font-bold">
+        Friendship Analytics{" "}
+      </h2>
       <div className="shadow rounded-xl p-6 m-6 ">
         <p className="text-gray-500 font-semibold">By Interaction Type </p>
         <PieChart

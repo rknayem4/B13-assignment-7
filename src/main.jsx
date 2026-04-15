@@ -5,12 +5,14 @@ import { RouterProvider } from 'react-router/dom'
 import { router } from './Router/Router'
 import Loading from './Components/UI/Loading'
 import AppsProvider from './Context/AppsProvider'
+import { ToastContainer } from 'react-toastify'
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <AppsProvider>
       <RouterProvider router={router}></RouterProvider>
+      <ToastContainer />
     </AppsProvider>
     
   </StrictMode>,

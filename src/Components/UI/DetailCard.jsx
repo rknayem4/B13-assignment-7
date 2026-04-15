@@ -4,6 +4,7 @@ import { LuMessageSquareMore, LuVideo } from "react-icons/lu";
 import { RiDeleteBinLine, RiNotificationSnoozeLine } from "react-icons/ri";
 import { TbPhoneCall } from "react-icons/tb";
 import { AppsContext } from "../../Context/AppsContext";
+import { toast } from "react-toastify";
 
 const DetailCard = ({ friendData }) => {
   const {friend, setFriend} = useContext(AppsContext)
@@ -16,6 +17,7 @@ const DetailCard = ({ friendData }) => {
       btn,
     }
     setFriend([...friend, data])
+    toast.success(` Call with ${name} `)
   }
   const handleText = (name)=>{
     const time = new Date().toLocaleString()
@@ -26,6 +28,7 @@ const DetailCard = ({ friendData }) => {
       btn,
     }
     setFriend([...friend, data])
+    toast.success(` Text with ${name} `)
   }
   const handleVideo = (name)=>{
     const time = new Date().toLocaleString()
@@ -36,6 +39,7 @@ const DetailCard = ({ friendData }) => {
       btn,
     }
     setFriend([...friend, data])
+    toast.success(`Video Call with ${name} `)
   }
   const {
     tags,
