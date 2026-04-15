@@ -6,21 +6,31 @@ const TimeLine = () => {
   const { friend } = useContext(AppsContext);
   const [value, setValue] = useState("default");
   const filteredData =
-  value === "default"
-  ? friend
-  : friend.filter((item) => item.btn.toLowerCase() == value.toLowerCase());
+    value === "default"
+      ? friend
+      : friend.filter((item) => item.btn.toLowerCase() == value.toLowerCase());
 
   const [search, setSearch] = useState("");
-      const searchedData = filteredData.filter((item) =>
-  item.name.toLowerCase().includes(search.toLowerCase())
-);
-
+  const searchedData = filteredData.filter((item) =>
+    item.name.toLowerCase().includes(search.toLowerCase()),
+  );
+  const [sortType, setSortType] = useState("");
+  const sortedData = [...searchedData].sort((a, b) => {
+    if (sortType === "Newest") {
+      return new Date(b.time) - new Date(a.time);
+    }
+    if (sortType === "Oldest") {
+      return new Date(a.time) - new Date(b.time);
+    }
+    return 0;
+  });
+  // console.log(sortType)
   return (
     <div className="min-h-screen container px-3 mx-auto my-12">
       <h2 className="text-4xl font-bold">TimeLine </h2>
       <div>
-        <div className="flex justify-between items-center">
-          <fieldset className="fieldset">
+        <div className="flex max-sm:flex-col justify-between items-center">
+          <fieldset className="fieldset max-sm:mx-auto">
             <select
               value={value}
               onChange={(e) => setValue(e.target.value)}
@@ -36,23 +46,25 @@ const TimeLine = () => {
             </select>
           </fieldset>
 
-          <div className="dropdown dropdown-center">
+          <div className="dropdown dropdown-center ">
             <div tabIndex={0} role="button" className="btn m-1">
-              Sort By : ⬇️
+              Sort By :{sortType ? sortType : "⬇️"}
             </div>
             <ul
               tabIndex="-1"
               className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm"
             >
-              <li>
+              <li onClick={() => setSortType("Newest")}>
                 <a>Newest </a>
               </li>
-              <li>
+              <li onClick={() => setSortType("Oldest")}>
                 <a>Oldest</a>
               </li>
             </ul>
           </div>
+
           <input
+            
             type="text"
             placeholder="Search"
             className="input input-bordered w-24 md:w-auto"
@@ -66,7 +78,7 @@ const TimeLine = () => {
           <p>No data Found</p>
         </div>
       ) : (
-        searchedData.map((data) => (
+        sortedData.map((data) => (
           <TimeLineCard key={data.id} data={data}></TimeLineCard>
         ))
       )}
