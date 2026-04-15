@@ -7,7 +7,6 @@ import { AppsContext } from "../../Context/AppsContext";
 
 const DetailCard = ({ friendData }) => {
   const {friend, setFriend} = useContext(AppsContext)
-  console.log(friend)
   const handleCall = (name)=>{
     const time = new Date().toLocaleString()
     const btn = 'Call'

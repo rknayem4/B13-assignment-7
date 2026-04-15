@@ -9,7 +9,7 @@ const TimeLine = () => {
     ? friend.filter((item) => item.btn.toLowerCase() == value.toLowerCase())
     : friend;
   return (
-    <div className="min-h-screen container mx-auto my-12">
+    <div className="min-h-screen container px-3 mx-auto my-12">
       <h2 className="text-4xl font-bold">TimeLine </h2>
       <div>
         <fieldset className="fieldset">
