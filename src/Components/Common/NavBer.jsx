@@ -8,7 +8,7 @@ const NavBer = () => {
   const linkBtn = (
     <>
       <NavLink
-        className="flex justify-center items-center gap-2 lg:border px-4 py-1.5 rounded border-gray-300 font-semibold text-lg"
+        className="flex justify-center items-center gap-2 lg:border px-4 py-1.5 rounded border-gray-100 font-semibold text-lg"
         to="/"
       >
         {" "}
@@ -16,7 +16,7 @@ const NavBer = () => {
         Home{" "}
       </NavLink>
       <NavLink
-        className="flex justify-center items-center gap-2 lg:border px-4 py-1.5 rounded border-gray-300 font-semibold text-lg "
+        className="flex justify-center items-center gap-2 lg:border px-4 py-1.5 rounded border-gray-100 font-semibold text-lg "
         to="/timeline"
       >
         {" "}
@@ -24,7 +24,7 @@ const NavBer = () => {
         Timeline{" "}
       </NavLink>
       <NavLink
-        className="flex justify-center items-center gap-2 lg:border px-4 py-1.5  rounded border-gray-300 font-semibold text-lg"
+        className="flex justify-center items-center gap-2  px-4 py-1.5  rounded border   border-gray-100 font-semibold text-lg"
         to="/stats"
       >
         {" "}

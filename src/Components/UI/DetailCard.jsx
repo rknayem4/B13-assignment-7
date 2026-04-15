@@ -7,40 +7,40 @@ import { AppsContext } from "../../Context/AppsContext";
 import { toast } from "react-toastify";
 
 const DetailCard = ({ friendData }) => {
-  const {friend, setFriend} = useContext(AppsContext)
-  const handleCall = (name)=>{
-    const time = new Date().toLocaleString()
-    const btn = 'Call'
+  const { friend, setFriend } = useContext(AppsContext);
+  const handleCall = (name) => {
+    const time = new Date().toLocaleString();
+    const btn = "Call";
     const data = {
-      name , 
+      name,
       time,
       btn,
-    }
-    setFriend([...friend, data])
-    toast.success(` Call with ${name} `)
-  }
-  const handleText = (name)=>{
-    const time = new Date().toLocaleString()
-    const btn = 'Text'
+    };
+    setFriend([...friend, data]);
+    toast.success(` Call with ${name} `);
+  };
+  const handleText = (name) => {
+    const time = new Date().toLocaleString();
+    const btn = "Text";
     const data = {
-      name , 
+      name,
       time,
       btn,
-    }
-    setFriend([...friend, data])
-    toast.success(` Text with ${name} `)
-  }
-  const handleVideo = (name)=>{
-    const time = new Date().toLocaleString()
-    const btn = 'Video'
+    };
+    setFriend([...friend, data]);
+    toast.success(` Text with ${name} `);
+  };
+  const handleVideo = (name) => {
+    const time = new Date().toLocaleString();
+    const btn = "Video";
     const data = {
-      name , 
+      name,
       time,
       btn,
-    }
-    setFriend([...friend, data])
-    toast.success(`Video Call with ${name} `)
-  }
+    };
+    setFriend([...friend, data]);
+    toast.success(`Video Call with ${name} `);
+  };
   const {
     tags,
     picture,
@@ -50,6 +50,16 @@ const DetailCard = ({ friendData }) => {
     goal,
     next_due_date,
   } = friendData;
+
+  let bgColor = "";
+
+  if (status == "overdue") {
+    bgColor = "bg-red-800";
+  } else if (status == "on-track") {
+    bgColor = "bg-green-900";
+  } else {
+    bgColor = "bg-yellow-600 ";
+  }
   return (
     <div>
       <div className=" grid grid-cols-3 lg:grid-cols-5 grid-rows-3 gap-5 my-8 px-3 md:px-0 ">
@@ -68,7 +78,7 @@ const DetailCard = ({ friendData }) => {
             ))}
           </div>
           <span
-            className={`text-white rounded-full text-center px-3 ${status == "overdue" ? "bg-red-800" : "bg-green-900"}`}
+            className={`text-white rounded-full text-center px-3 ${bgColor}`}
           >
             {status}
           </span>
@@ -119,13 +129,22 @@ const DetailCard = ({ friendData }) => {
         <div className="space-y-4 col-span-3  shadow rounded-2xl p-4">
           <h4 className="font-semibold">Quick Check-IN</h4>
           <div className="grid grid-cols-3 gap-3">
-            <button onClick={()=> handleCall(name)} className="btn flex flex-col h-full p-2">
+            <button
+              onClick={() => handleCall(name)}
+              className="btn flex flex-col h-full p-2"
+            >
               <TbPhoneCall className="text-2xl" /> Call{" "}
             </button>
-            <button onClick={()=> handleText(name)} className="btn flex flex-col h-full p-2">
+            <button
+              onClick={() => handleText(name)}
+              className="btn flex flex-col h-full p-2"
+            >
               <LuMessageSquareMore className="text-2xl" /> Text{" "}
             </button>
-            <button onClick={()=> handleVideo(name)} className="btn flex flex-col h-full p-2">
+            <button
+              onClick={() => handleVideo(name)}
+              className="btn flex flex-col h-full p-2"
+            >
               <LuVideo className="text-2xl" /> Video{" "}
             </button>
           </div>
