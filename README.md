@@ -1,16 +1,85 @@
-# React + Vite
+# 📊 Friend Communication Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern web application that helps users track and manage their communication with friends. Users can monitor when and how they interacted (text, call, video call) and analyze their communication patterns through a clean UI and visual statistics.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Live Demo
+🔗 https://b13-a7-rk.netlify.app
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📌 Project Description
 
-## Expanding the ESLint configuration
+Friend Communication Tracker is a React-based web app designed to keep a record of your interactions with friends. It allows users to log communication activities such as text messages, phone calls, and video calls, and visualize them through timelines and charts.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+This project focuses on user-friendly UI, real-time interaction tracking, and insightful data visualization.
+
+---
+
+## 🛠️ Technologies Used
+
+- ⚛️ React.js
+- 🎨 Tailwind CSS
+- 🌼 DaisyUI
+- 🔀 React Router
+- 📊 Recharts
+- 🔔 React Toastify
+- 🎯 React Icons
+- 🌐 Netlify (Deployment)
+
+---
+
+## ✨ Key Features
+
+### 📇 1. Friend Information Cards
+- Display all friends on the homepage
+- Click on a card to view detailed information
+- Clean and responsive UI design
+
+### 📞 2. Communication Tracking System
+- Track interactions using:
+  - Text
+  - Call
+  - Video Call
+- Each action is recorded with time and type
+- Buttons for quick interaction logging
+
+### 🕒 3. Timeline & Filtering
+- View all communication history in timeline format
+- Filter by communication type:
+  - Text
+  - Call
+  - Video Call
+- Easy tracking of past interactions
+
+### 📈 4. Statistics & Data Visualization
+- Graphical representation of communication types
+- Built using Recharts
+- Helps analyze user communication behavior
+
+---
+
+## 📂 Pages Overview
+
+- 🏠 Home Page → Friend list with cards  
+- 📄 Details Page → Friend details + communication buttons  
+- 🕒 Timeline Page → Communication history + filter  
+- 📊 Stats Page → Graph visualization  
+
+---
+
+## ⚙️ Installation & Setup
+
+```bash
+# Clone the repository
+git clone https://github.com/rknayem4/B13-assignment-7.git
+
+# Go to project directory
+cd B13-assignment-7
+
+# Install dependencies
+npm install
+
+# Run the project
+npm run dev
